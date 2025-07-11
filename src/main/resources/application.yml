@@ -16,7 +16,8 @@ spring:
       connection-test-query: SELECT 1
 flowable:
   async-executor-activate: false #关闭定时任务job
-  #將databaseSchemaUpdate没置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表给构开级至新版本。
+  #將databaseSchemaUpdate没置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表给开级至新版本。
+  #所以，一般情况下，只有第一次是true，之后都要改成false，否则可能在没有备份表的情况下把数据表结构升级
   database-schema-update: true
 server:
   port: 8082
